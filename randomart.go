@@ -52,13 +52,13 @@ func (b *bishop) Write(buf []byte) (int, error) {
 
 		moveSouth, moveEast := (r >> 1), (r & 1)
 
-		if moveSouth == 1 && b.y < b.ymax {
+		if moveSouth == 1 && b.y < (b.ymax-1) {
 			b.y++
 		} else if moveSouth == 0 && b.y > 0 {
 			b.y--
 		}
 
-		if moveEast == 1 && b.x < b.xmax {
+		if moveEast == 1 && b.x < (b.xmax-1) {
 			b.x++
 		} else if moveEast == 0 && b.x > 0 {
 			b.x--
